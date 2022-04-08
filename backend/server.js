@@ -1,18 +1,12 @@
-const express = require('express');
+const http = require('http');
 require('dotenv').config();
-const friendsRouter = require('./routes/friends.router');
-const messagesRouter = require('./routes/messages.router');
 
-const app = express();
+const app = require('./app');
 
 const port = process.env.PORT;
 
-app.use(express.json());
+const server = http.createServer(app);
 
-app.use('/friends', friendsRouter);
-app.use('/messages', messagesRouter);
-
-
-app.listen(port, () => {
-  console.log(`Listening on ${port}...`);
-}); 
+server.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
+});
