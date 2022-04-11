@@ -1,3 +1,4 @@
+
 const friends = [
     {
       id: 0,
@@ -10,3 +11,4 @@ const friends = [
   ];
   
   module.exports = friends;
+

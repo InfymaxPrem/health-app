@@ -1,12 +1,12 @@
 const http = require('http');
-const mysql = require('mysql2');
+/* const mysql = require('mysql2'); */
 require('dotenv').config();
 
 const app = require('./app');
 
 const port = process.env.PORT;
 
-const db = mysql.createPool({
+/* const db = mysql.createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,   
@@ -17,7 +17,7 @@ const db = mysql.createPool({
 db.getConnection( (err, connection)=> {
   if (err) throw (err)
   console.log ("DB connected successful: ")
-})
+}) */
 
 const server = http.createServer(app);
 
